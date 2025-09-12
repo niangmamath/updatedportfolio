@@ -218,15 +218,16 @@ function App() {
 
       {/* Projects Section */}
       <section id="projets" className="py-20 relative">
-        {/* Projects Background */}
-        <div className="absolute inset-0">
-          <img 
-            src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&h=1080&fit=crop" 
-            alt="Code background" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-purple-900/80"></div>
-        </div>
+  {/* Calques de fond */}
+  <div className="absolute inset-0 z-0 pointer-events-none">
+    <img
+      src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1920&h=1080&fit=crop"
+      alt="Code background"
+      className="w-full h-full object-cover"
+    />
+    <div className="absolute inset-0 bg-purple-900/80"></div>
+  </div>
+
         <div className="absolute inset-0">
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-10 left-10 w-32 h-32 bg-purple-400 rounded-lg blur-2xl animate-float"></div>
