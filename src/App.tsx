@@ -248,7 +248,9 @@ function App() {
             <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
               Projets Innovants
             </h2>  
-            
+             <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-pink-400 to-red-400 bg-clip-text text-transparent">
+             Projets innovants
+            </h2>
             <p className="text-xl text-white max-w-2xl mx-auto">
               Des solutions créatives pour des défis technologiques
               complexes
