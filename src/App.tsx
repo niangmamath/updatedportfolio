@@ -48,7 +48,7 @@ function App() {
             </button>
           </div>
           <ul className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mt-4 md:mt-0`}>
-            {['Profil', 'Compétences', 'Projets', 'Expérience', 'Contact', 'CV'].map((item, index) => (
+            {['Profil', 'Compétences', 'Projets', 'Expériences' 'CV', 'Contact'].map((item, index) => (
               <li key={index}>
                 {item === 'CV' ? (
                   <a 
