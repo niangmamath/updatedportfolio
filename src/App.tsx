@@ -228,7 +228,7 @@ function App() {
     <div className="absolute inset-0 bg-purple-900/80"></div>
   </div>
 
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0 opacity-20 pointer-events-none">
           <div className="absolute inset-0 opacity-20">
             <div className="absolute top-10 left-10 w-32 h-32 bg-purple-400 rounded-lg blur-2xl animate-float"></div>
             <div className="absolute top-32 right-20 w-24 h-24 bg-pink-400 rounded-lg blur-2xl animate-float delay-1000"></div>
