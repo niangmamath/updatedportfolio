@@ -48,15 +48,27 @@ function App() {
             </button>
           </div>
           <ul className={`${isMenuOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row justify-center space-y-4 md:space-y-0 md:space-x-8 mt-4 md:mt-0`}>
-            {['Profil', 'Compétences', 'Projets', 'Expérience', 'Contact'].map((item, index) => (
+            {['Profil', 'Compétences', 'Projets', 'Expérience', 'Contact', 'CV'].map((item, index) => (
               <li key={index}>
-                <a 
-                  href={`#${item.toLowerCase()}`} 
-                  onClick={() => setIsMenuOpen(false)} 
-                  className="block hover:text-blue-400 transition-all duration-300 hover:scale-105 font-medium"
-                >
-                  {item}
-                </a>
+                {item === 'CV' ? (
+                  <a 
+                    href="/cv1.pdf" 
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsMenuOpen(false)} 
+                    className="block hover:text-blue-400 transition-all duration-300 hover:scale-105 font-medium"
+                  >
+                    {item}
+                  </a>
+                ) : (
+                  <a 
+                    href={`#${item.toLowerCase()}`} 
+                    onClick={() => setIsMenuOpen(false)} 
+                    className="block hover:text-blue-400 transition-all duration-300 hover:scale-105 font-medium"
+                  >
+                    {item}
+                  </a>
+                )}
               </li>
             ))}
           </ul>
