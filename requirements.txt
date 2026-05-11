@@ -8,3 +8,5 @@ sqlparse==0.5.5
 tzdata==2026.2
 gunicorn==22.0.0
 whitenoise==6.8.2
+cloudinary==1.42.1
+django-cloudinary-storage==0.3.0
