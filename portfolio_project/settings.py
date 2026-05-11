@@ -1,5 +1,6 @@
 from pathlib import Path
 from decouple import config, Csv
+import dj_database_url
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -58,27 +59,32 @@ WSGI_APPLICATION = 'portfolio_project.wsgi.application'
 
 
 # ============================================================
-#  BASE DE DONNÉES — PostgreSQL (via .env)
+#  BASE DE DONNÉES — DATABASE_URL (Railway) ou vars individuelles
 # ============================================================
-_db_options = {}
-_sslmode = config('DB_SSLMODE', default='')
-_sslcert = config('DB_SSLROOTCERT', default='')
-if _sslmode:
-    _db_options['sslmode'] = _sslmode
-if _sslcert:
-    _db_options['sslrootcert'] = str(BASE_DIR / _sslcert)
+_database_url = config('DATABASE_URL', default='')
 
-DATABASES = {
-    'default': {
-        'ENGINE':   config('DB_ENGINE',   default='django.db.backends.sqlite3'),
-        'NAME':     config('DB_NAME',     default=str(BASE_DIR / 'db.sqlite3')),
-        'USER':     config('DB_USER',     default=''),
-        'PASSWORD': config('DB_PASSWORD', default=''),
-        'HOST':     config('DB_HOST',     default='localhost'),
-        'PORT':     config('DB_PORT',     default='5432'),
-        'OPTIONS':  _db_options,
+if _database_url:
+    DATABASES = {'default': dj_database_url.parse(_database_url, conn_max_age=600)}
+else:
+    _db_options = {}
+    _sslmode = config('DB_SSLMODE', default='')
+    _sslcert = config('DB_SSLROOTCERT', default='')
+    if _sslmode:
+        _db_options['sslmode'] = _sslmode
+    if _sslcert:
+        _db_options['sslrootcert'] = str(BASE_DIR / _sslcert)
+
+    DATABASES = {
+        'default': {
+            'ENGINE':   config('DB_ENGINE',   default='django.db.backends.sqlite3'),
+            'NAME':     config('DB_NAME',     default=str(BASE_DIR / 'db.sqlite3')),
+            'USER':     config('DB_USER',     default=''),
+            'PASSWORD': config('DB_PASSWORD', default=''),
+            'HOST':     config('DB_HOST',     default='localhost'),
+            'PORT':     config('DB_PORT',     default='5432'),
+            'OPTIONS':  _db_options,
+        }
     }
-}
 
 
 # ============================================================
@@ -124,6 +130,16 @@ EMAIL_HOST_USER = config('EMAIL_HOST_USER', default='')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD', default='')
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 CONTACT_RECIPIENT_EMAIL = EMAIL_HOST_USER
+
+
+# ============================================================
+#  CSRF — domaines Railway autorisés
+# ============================================================
+CSRF_TRUSTED_ORIGINS = config(
+    'CSRF_TRUSTED_ORIGINS',
+    default='https://*.railway.app,https://*.up.railway.app',
+    cast=Csv(),
+)
 
 
 # ============================================================

@@ -1,0 +1,8 @@
+[build]
+builder = "nixpacks"
+buildCommand = "pip install -r requirements.txt && python manage.py collectstatic --noinput"
+
+[deploy]
+startCommand = "python manage.py migrate && gunicorn portfolio_project.wsgi --bind 0.0.0.0:$PORT --workers 2"
+healthcheckPath = "/"
+restartPolicyType = "on_failure"
