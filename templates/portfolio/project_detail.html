@@ -132,7 +132,6 @@
           </div>
 
           <div class="rounded-2xl overflow-hidden shadow-lg border border-base-200">
-            <!-- Barre de navigation -->
             <div class="flex items-center justify-between px-4 py-2 bg-base-300 border-b border-base-200">
               <button id="pdf-prev" class="btn btn-xs btn-ghost gap-1">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"/></svg>
@@ -146,8 +145,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
               </button>
             </div>
-
-            <!-- Zone de rendu canvas -->
             <div class="bg-base-200 flex justify-center p-4 overflow-auto" style="max-height:800px;">
               <div id="pdf-loading" class="flex flex-col items-center justify-center py-20 gap-3 text-base-content/40">
                 <svg class="animate-spin h-8 w-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -165,9 +162,8 @@
         <script>
           pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
 
-          const pdfUrl = '{{ project.report_pdf.url }}';
-          let pdfDoc = null;
-          let currentPage = 1;
+          const pdfUrl = '{% url "pdf_proxy" project.slug %}';
+          let pdfDoc = null, currentPage = 1;
           const canvas = document.getElementById('pdf-canvas');
           const ctx = canvas.getContext('2d');
           const loading = document.getElementById('pdf-loading');
@@ -185,22 +181,19 @@
             });
           }
 
-          pdfjsLib.getDocument(pdfUrl).promise.then(doc => {
+          pdfjsLib.getDocument({ url: pdfUrl, withCredentials: false }).promise.then(doc => {
             pdfDoc = doc;
             document.getElementById('pdf-page-count').textContent = doc.numPages;
             loading.classList.add('hidden');
             canvas.classList.remove('hidden');
             renderPage(1);
-          }).catch(() => {
+          }).catch(err => {
+            console.error('PDF.js error:', err);
             loading.innerHTML = '<p class="text-error text-sm">Impossible de charger le PDF. <a href="' + pdfUrl + '" class="link" download>Télécharger</a></p>';
           });
 
-          document.getElementById('pdf-prev').addEventListener('click', () => {
-            if (currentPage > 1) renderPage(--currentPage);
-          });
-          document.getElementById('pdf-next').addEventListener('click', () => {
-            if (pdfDoc && currentPage < pdfDoc.numPages) renderPage(++currentPage);
-          });
+          document.getElementById('pdf-prev').addEventListener('click', () => { if (currentPage > 1) renderPage(--currentPage); });
+          document.getElementById('pdf-next').addEventListener('click', () => { if (pdfDoc && currentPage < pdfDoc.numPages) renderPage(++currentPage); });
         </script>
         {% endif %}
 
