@@ -2,6 +2,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
 from django.conf import settings
+from django.http import HttpResponse, Http404
+import requests as _requests
 from .models import About, Skill, Project, Experience, Education, Certification, ContactMessage
 
 CATEGORY_META = {
@@ -66,6 +68,43 @@ def project_detail(request, slug):
     related = Project.objects.filter(category=project.category).exclude(pk=project.pk)[:3]
     context = {'project': project, 'related': related, 'project_emoji': PROJECT_EMOJI}
     return render(request, 'portfolio/project_detail.html', context)
+
+
+def pdf_proxy(request, slug):
+    project = get_object_or_404(Project, slug=slug)
+    if not project.report_pdf:
+        raise Http404
+
+    url = project.report_pdf.url
+    if url.startswith('http'):
+        # Fichier sur Cloudinary — utilise l'API (pas le CDN) pour contourner les restrictions d'accès
+        try:
+            import cloudinary.utils
+            public_id = 'media/' + project.report_pdf.name
+            dl_url = cloudinary.utils.private_download_url(
+                public_id, '', resource_type='raw', type='upload',
+            )
+            resp = _requests.get(dl_url, timeout=30)
+            resp.raise_for_status()
+            content = resp.content
+        except Exception:
+            raise Http404
+    else:
+        # Fichier local (développement sans Cloudinary)
+        try:
+            with project.report_pdf.open('rb') as f:
+                content = f.read()
+        except Exception:
+            raise Http404
+
+    return HttpResponse(
+        content,
+        content_type='application/pdf',
+        headers={
+            'Content-Disposition': 'inline; filename="rapport.pdf"',
+            'Content-Length': str(len(content)),
+        },
+    )
 
 
 def contact(request):
