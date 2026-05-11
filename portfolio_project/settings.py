@@ -16,6 +16,8 @@ _railway_host = config('RAILWAY_PUBLIC_DOMAIN', default='')
 if _railway_host and _railway_host not in ALLOWED_HOSTS:
     ALLOWED_HOSTS.append(_railway_host)
 
+ALLOWED_HOSTS += ['healthcheck.railway.app', '.railway.app', '.up.railway.app']
+
 
 # ============================================================
 #  APPLICATIONS
