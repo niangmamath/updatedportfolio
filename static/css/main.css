@@ -1,0 +1,55 @@
+/* ===== CUSTOM — complément à DaisyUI + Tailwind ===== */
+
+/* Police globale */
+body { font-family: 'Inter', system-ui, sans-serif; }
+
+/* Scroll doux */
+html { scroll-behavior: smooth; }
+
+/* Couleur primaire DaisyUI → bleu cohérent */
+[data-theme="light"] {
+  --color-primary: oklch(0.623 0.214 259.8);
+  --color-primary-content: oklch(1 0 0);
+  --color-secondary: oklch(0.558 0.228 281.4);
+  --color-accent: oklch(0.685 0.169 204.6);
+}
+
+/* Navbar : compenser la hauteur fixe */
+main { min-height: calc(100vh - 68px); }
+
+/* Scroll down hero — animation */
+@keyframes bounceY {
+  0%, 100% { transform: translateY(0) translateX(-50%); }
+  50% { transform: translateY(8px) translateX(-50%); }
+}
+
+/* Hero badge flottant — animation légère */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+.hero .badge:nth-child(1) { animation: float 3s ease-in-out infinite; }
+.hero .badge:nth-child(2) { animation: float 3.5s ease-in-out infinite 0.5s; }
+
+/* Skills — hover sur les badges */
+.skill-badge-hover:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.08); }
+
+/* Timeline — centrer le contenu sur mobile */
+@media (max-width: 768px) {
+  .timeline-start { display: none; }
+  .timeline-end { margin-left: 1rem; }
+}
+
+/* Cards projet — gradient placeholder */
+.project-placeholder { transition: filter .3s ease; }
+.project-placeholder:hover { filter: brightness(0.96); }
+
+/* Flash toast — auto-dismiss */
+.toast { animation: slideInRight .3s ease; }
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Prose — description projets */
+.prose p { color: rgb(71 85 105 / 0.85); line-height: 1.8; margin-bottom: 1rem; }

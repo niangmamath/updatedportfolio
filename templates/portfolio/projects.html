@@ -1,0 +1,112 @@
+{% extends 'portfolio/base.html' %}
+
+{% block title %}Projets — Mamath Yacine Niang{% endblock %}
+
+{% block content %}
+
+<!-- Page Hero -->
+<section class="py-20 bg-gradient-to-br from-blue-50 via-base-100 to-indigo-50 text-center">
+  <div class="max-w-2xl mx-auto px-6">
+    <div class="badge badge-primary badge-outline mb-4 tracking-widest text-xs font-bold uppercase">Portfolio</div>
+    <h1 class="text-5xl font-black text-base-content mb-4">Mes Projets</h1>
+    <p class="text-base-content/60 text-lg">Développement web, data science et intelligence artificielle</p>
+  </div>
+</section>
+
+<section class="py-16 bg-base-100">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Filtres -->
+    <div class="flex flex-wrap gap-2 justify-center mb-12">
+      <a href="{% url 'projects' %}"
+         class="btn rounded-full {% if active_category == 'all' %}btn-primary{% else %}btn-ghost border border-base-300{% endif %}">
+        Tous
+      </a>
+      {% for value, label in categories %}
+      <a href="{% url 'projects' %}?category={{ value }}"
+         class="btn rounded-full {% if active_category == value %}btn-primary{% else %}btn-ghost border border-base-300{% endif %}">
+        {% if value == 'ia' %}🤖
+        {% elif value == 'data' %}📊
+        {% elif value == 'dev' %}💻
+        {% else %}🎓{% endif %}
+        {{ label }}
+      </a>
+      {% endfor %}
+    </div>
+
+    {% if projects %}
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {% for project in projects %}
+      <div class="card bg-base-100 border border-base-200 shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        {% with main_img=project.get_main_image %}
+        {% if main_img %}
+        <figure><img src="{{ main_img }}" alt="{{ project.title }}" class="h-44 w-full object-cover"/></figure>
+        {% else %}
+        <div class="h-36 flex items-center justify-center rounded-t-2xl
+          {% if project.category == 'ia' %}bg-gradient-to-br from-purple-50 to-indigo-100
+          {% elif project.category == 'data' %}bg-gradient-to-br from-green-50 to-emerald-100
+          {% elif project.category == 'dev' %}bg-gradient-to-br from-blue-50 to-sky-100
+          {% else %}bg-gradient-to-br from-amber-50 to-orange-100{% endif %}">
+          <span class="text-5xl opacity-60">
+            {% if project.category == 'ia' %}🤖
+            {% elif project.category == 'data' %}📊
+            {% elif project.category == 'dev' %}💻
+            {% else %}🎓{% endif %}
+          </span>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <div class="card-body gap-3">
+          <div class="flex items-center justify-between">
+            <div class="badge badge-sm font-semibold
+              {% if project.category == 'dev' %}badge-primary
+              {% elif project.category == 'data' %}badge-success
+              {% elif project.category == 'ia' %}badge-secondary
+              {% else %}badge-warning{% endif %}">
+              {{ project.get_category_display }}
+            </div>
+            <div class="flex gap-1">
+              {% if project.github_url %}
+              <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="btn btn-ghost btn-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 6.8c.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/></svg>
+              </a>
+              {% endif %}
+              {% if project.demo_url %}
+              <a href="{{ project.demo_url }}" target="_blank" rel="noopener" class="btn btn-ghost btn-xs">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+
+          <h3 class="card-title text-base font-bold">{{ project.title }}</h3>
+          <p class="text-sm text-base-content/60 leading-relaxed flex-1">{{ project.short_description }}</p>
+
+          <div class="flex flex-wrap gap-1">
+            {% for tech in project.get_tech_list %}
+            <span class="badge badge-ghost badge-sm">{{ tech }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="card-actions justify-end mt-1">
+            <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary btn-sm rounded-full gap-1">
+              Voir le détail <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    {% else %}
+    <div class="text-center py-20">
+      <div class="text-6xl mb-4">🔍</div>
+      <p class="text-base-content/40 text-lg mb-6">Aucun projet dans cette catégorie.</p>
+      <a href="{% url 'projects' %}" class="btn btn-primary rounded-full">Voir tous les projets</a>
+    </div>
+    {% endif %}
+
+  </div>
+</section>
+{% endblock %}

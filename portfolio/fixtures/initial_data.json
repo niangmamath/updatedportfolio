@@ -1,0 +1,338 @@
+[
+  {
+    "model": "portfolio.about",
+    "pk": 1,
+    "fields": {
+      "name": "Mamath Yacine Niang",
+      "title": "Élève Ingénieur — Développement · Data · IA",
+      "bio": "Élève ingénieur à l'École Centrale Casablanca, passionné par le développement logiciel, l'IA et l'innovation durable. J'ai de l'expérience en développement full-stack et en projets techniques à impact réel. Je construis des solutions concrètes, de la conception au déploiement, avec un intérêt particulier pour l'intelligence artificielle générative et l'automatisation. Actuellement à la recherche d'un stage assistant ingénieur.",
+      "profile_image": "",
+      "cv_file": "",
+      "email": "niangmamathyacine@gmail.com",
+      "phone": "+212 783 346 308",
+      "location": "Casablanca, Maroc",
+      "linkedin_url": "https://www.linkedin.com/in/mamath-yacine-n-12048a320/",
+      "github_url": ""
+    }
+  },
+
+  {
+    "model": "portfolio.skill",
+    "pk": 1,
+    "fields": {"name": "Python", "category": "dev", "level": 85, "icon": "", "order": 1}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 2,
+    "fields": {"name": "HTML / CSS", "category": "dev", "level": 80, "icon": "", "order": 2}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 3,
+    "fields": {"name": "JavaScript", "category": "dev", "level": 70, "icon": "", "order": 3}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 4,
+    "fields": {"name": "Django", "category": "dev", "level": 72, "icon": "", "order": 4}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 5,
+    "fields": {"name": "Node.js / Express", "category": "dev", "level": 65, "icon": "", "order": 5}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 6,
+    "fields": {"name": "Machine Learning", "category": "data", "level": 78, "icon": "", "order": 1}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 7,
+    "fields": {"name": "Scikit-learn / Pandas", "category": "data", "level": 80, "icon": "", "order": 2}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 8,
+    "fields": {"name": "SQL", "category": "data", "level": 75, "icon": "", "order": 3}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 9,
+    "fields": {"name": "MongoDB", "category": "data", "level": 65, "icon": "", "order": 4}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 10,
+    "fields": {"name": "Power BI", "category": "data", "level": 60, "icon": "", "order": 5}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 11,
+    "fields": {"name": "IA Générative (LLM)", "category": "ia", "level": 75, "icon": "", "order": 1}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 12,
+    "fields": {"name": "Agentic AI", "category": "ia", "level": 68, "icon": "", "order": 2}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 13,
+    "fields": {"name": "Fine-tuning LLM", "category": "ia", "level": 65, "icon": "", "order": 3}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 14,
+    "fields": {"name": "Automatisation (n8n)", "category": "ia", "level": 60, "icon": "", "order": 4}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 15,
+    "fields": {"name": "GitHub", "category": "tools", "level": 80, "icon": "", "order": 1}
+  },
+  {
+    "model": "portfolio.skill",
+    "pk": 16,
+    "fields": {"name": "Gestion de projet", "category": "tools", "level": 75, "icon": "", "order": 2}
+  },
+
+  {
+    "model": "portfolio.project",
+    "pk": 1,
+    "fields": {
+      "title": "CV Optimizer",
+      "slug": "cv-optimizer",
+      "short_description": "Application web IA qui analyse un CV face à une offre d'emploi, calcule un score ATS et réécrit automatiquement le CV.",
+      "description": "Application web IA de bout en bout développée en 2025. Elle permet d'analyser un CV face à une offre d'emploi, de calculer un score de compatibilité ATS, de fournir des recommandations ciblées et de réécrire automatiquement le CV grâce à l'intelligence artificielle.\n\nFonctionnalités principales :\n- Upload et parsing de CV (PDF)\n- Analyse sémantique face à une offre d'emploi\n- Score ATS avec détail des critères\n- Recommandations personnalisées\n- Réécriture automatique du CV par IA générative",
+      "category": "ia",
+      "tech_stack": "Python, IA Générative, NLP, HTML/CSS/JS",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "featured": true,
+      "order": 1,
+      "created_at": "2025-06-01"
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 2,
+    "fields": {
+      "title": "RAMGreenConnect",
+      "slug": "ramgreenconnect",
+      "short_description": "Plateforme full-stack de durabilité pour Royal Air Maroc : empreinte carbone, gamification et modèle économique SAF.",
+      "description": "Développement d'une plateforme full-stack dans le cadre d'un projet innovation avec Royal Air Maroc. La plateforme intègre :\n\n- Un calculateur d'empreinte carbone des vols\n- Un système de gamification pour encourager des choix de voyage responsables\n- Un modèle économique autour du Sustainable Aviation Fuel (SAF)\n- Une interface utilisateur intuitive et responsive\n\nProjet réalisé en équipe avec une approche agile et une attention particulière à l'expérience utilisateur.",
+      "category": "dev",
+      "tech_stack": "Full-Stack, Python, JavaScript, Base de données, API REST",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "featured": true,
+      "order": 2,
+      "created_at": "2025-03-01"
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 3,
+    "fields": {
+      "title": "Prédiction Intention d'Achat",
+      "slug": "prediction-intention-achat",
+      "short_description": "Système ML de prédiction sur 12 000 sessions e-commerce avec classes déséquilibrées — Random Forest, F1=0.65.",
+      "description": "Système de prédiction de l'intention d'achat sur 12 000 sessions e-commerce avec classes déséquilibrées.\n\nDémarche suivie :\n- Exploration et nettoyage des données\n- Gestion du déséquilibre des classes (SMOTE, class_weight)\n- Comparaison de trois modèles : Logistic Regression, Decision Tree, Random Forest\n- Random Forest retenu avec un F1-Score de 0.65\n- Optimisation par compression du modèle pour déploiement\n\nProjet mettant en avant des compétences avancées en machine learning et en évaluation de modèles sur données déséquilibrées.",
+      "category": "data",
+      "tech_stack": "Python, Scikit-learn, Pandas, SMOTE, Random Forest",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "featured": true,
+      "order": 3,
+      "created_at": "2026-01-01"
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 4,
+    "fields": {
+      "title": "Détection Cancer du Col de l'Utérus",
+      "slug": "detection-cancer-col-uterus",
+      "short_description": "Application ML de détection précoce développée en une semaine lors d'une Coding Week — analyse de données médicales.",
+      "description": "Projet réalisé en une semaine dans le cadre d'une Coding Week (avril 2025). L'objectif était d'appliquer le machine learning dans le domaine de la santé.\n\nRéalisations :\n- Analyse et prétraitement de données médicales réelles\n- Application d'algorithmes avancés de classification\n- Évaluation des modèles avec métriques adaptées au médical (sensibilité, spécificité)\n- Interface de prédiction pour aider à la détection précoce\n- Présentation des résultats à un jury",
+      "category": "ia",
+      "tech_stack": "Python, Scikit-learn, Pandas, Machine Learning médical",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "featured": true,
+      "order": 4,
+      "created_at": "2025-04-01"
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 6,
+    "fields": {
+      "title": "Impact COVID-19 en Afrique Subsaharienne",
+      "slug": "impact-covid19-afrique-subsaharienne",
+      "short_description": "Dashboard Power BI (CRISP-DM) analysant l'impact socio-économique du COVID-19 sur 2 428 répondants dans 5 pays africains. 72% de baisse de revenus révélées.",
+      "description": "Rapport d'analyse de données réalisé à l'École Centrale Casablanca (janvier 2026), en collaboration avec Sette TOURE.\n\nMéthodologie CRISP-DM appliquée sur le dataset subsaharan.csv couvrant 5 pays : Afrique du Sud, Kenya, Côte d'Ivoire, Mozambique, Nigeria.\n\nIndicateurs DAX créés : % Job Loss, % Vulnérabilité Extrême, % Baisse Revenu, % Baisse Activité Mobile, Moyenne Inquiétude.\n\nRésultats clés :\n- 72,2% des répondants ont déclaré une baisse de revenu\n- 33% de taux de perte d'emploi\n- 45% de vulnérabilité financière extrême\n- Auto-entrepreneurs : impact > 188% — catégorie la plus vulnérable\n- Mobile Money : 68,33% des utilisateurs maintiennent leurs transactions\n- Mozambique : meilleure résilience (70,11%)",
+      "category": "data",
+      "tech_stack": "Power BI, DAX, CRISP-DM, Analyse de données, CSV",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "featured": true,
+      "order": 3,
+      "created_at": "2026-01-18"
+    }
+  },
+  {
+    "model": "portfolio.project",
+    "pk": 5,
+    "fields": {
+      "title": "Système Énergétique Hybride",
+      "slug": "systeme-energetique-hybride",
+      "short_description": "Système hybride solaire/éolien avec stockage argile et application de monitoring en temps réel.",
+      "description": "Projet Learning by Doing mené en équipe à l'École Centrale Casablanca.\n\nObjectif : développer un système hybride combinant énergie solaire et éolienne, associé à un dispositif de stockage innovant utilisant des briques d'argile.\n\nContributions :\n- Conception et dimensionnement du système énergétique hybride\n- Développement d'une application permettant aux utilisateurs de monitorer leur consommation énergétique\n- Implémentation du basculement automatique entre sources selon les conditions météorologiques en temps réel\n- Interface de contrôle intuitive",
+      "category": "academic",
+      "tech_stack": "Python, IoT, API météo, HTML/CSS/JS",
+      "image": "",
+      "github_url": "",
+      "demo_url": "",
+      "featured": false,
+      "order": 5,
+      "created_at": "2025-01-01"
+    }
+  },
+
+  {
+    "model": "portfolio.experience",
+    "pk": 1,
+    "fields": {
+      "title": "Stagiaire Web",
+      "organization": "Association Amal Biladi",
+      "exp_type": "job",
+      "start_date": "Juin 2025",
+      "end_date": "Août 2025",
+      "description": "Gestion et optimisation du site web (Magento), développement de fonctionnalités interactives et amélioration des performances techniques.",
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 2,
+    "fields": {
+      "title": "RAMGreenConnect — Projet Innovation",
+      "organization": "Royal Air Maroc / École Centrale Casablanca",
+      "exp_type": "project",
+      "start_date": "2025",
+      "end_date": "2025",
+      "description": "Développement d'une plateforme full-stack intégrant calcul d'empreinte carbone, gamification et modèle économique SAF pour encourager des choix de voyage responsables.",
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.experience",
+    "pk": 3,
+    "fields": {
+      "title": "Prédiction Intention d'Achat",
+      "organization": "Projet Personnel",
+      "exp_type": "project",
+      "start_date": "Janvier 2026",
+      "end_date": "Janvier 2026",
+      "description": "Système ML de prédiction sur 12 000 sessions e-commerce avec classes déséquilibrées. Random Forest avec F1-Score de 0.65, optimisé par compression pour déploiement.",
+      "order": 3
+    }
+  },
+
+  {
+    "model": "portfolio.education",
+    "pk": 1,
+    "fields": {
+      "degree": "Diplôme d'Ingénierie Généraliste",
+      "school": "École Centrale Casablanca",
+      "period": "En cours",
+      "description": "Formation d'ingénieur généraliste avec spécialisation en développement logiciel, data science et intelligence artificielle.",
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 2,
+    "fields": {
+      "degree": "Classes Préparatoires aux Grandes Écoles (CPGE)",
+      "school": "CPGE de Thiès, Sénégal",
+      "period": "2022 – 2024",
+      "description": "Formation intensive en mathématiques, physique et sciences de l'ingénieur.",
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.education",
+    "pk": 3,
+    "fields": {
+      "degree": "Baccalauréat Scientifique Série S2 — Mention Bien",
+      "school": "Lycée de Keur Madiabel",
+      "period": "2022",
+      "description": "",
+      "order": 3
+    }
+  },
+
+  {
+    "model": "portfolio.certification",
+    "pk": 1,
+    "fields": {
+      "name": "Databases and SQL for Data Science with Python",
+      "issuer": "IBM / Coursera",
+      "date": "2024",
+      "credential_url": "",
+      "order": 1
+    }
+  },
+  {
+    "model": "portfolio.certification",
+    "pk": 2,
+    "fields": {
+      "name": "LLM Fine-Tuning and Customization Training",
+      "issuer": "Simplilearn / Coursera",
+      "date": "2024",
+      "credential_url": "",
+      "order": 2
+    }
+  },
+  {
+    "model": "portfolio.certification",
+    "pk": 3,
+    "fields": {
+      "name": "SOAP Web Services with JAX-WS",
+      "issuer": "LearnQuest / Coursera",
+      "date": "2024",
+      "credential_url": "",
+      "order": 3
+    }
+  },
+  {
+    "model": "portfolio.certification",
+    "pk": 4,
+    "fields": {
+      "name": "Google Project Management",
+      "issuer": "Google / Coursera",
+      "date": "2024",
+      "credential_url": "",
+      "order": 4
+    }
+  },
+  {
+    "model": "portfolio.certification",
+    "pk": 5,
+    "fields": {
+      "name": "Front-End Developer",
+      "issuer": "Coursera",
+      "date": "2024",
+      "credential_url": "",
+      "order": 5
+    }
+  }
+]

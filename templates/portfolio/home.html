@@ -1,0 +1,465 @@
+{% extends 'portfolio/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- ================================================================
+     HERO
+     ================================================================ -->
+<section class="hero min-h-screen bg-gradient-to-br from-blue-50 via-base-100 to-indigo-50 relative overflow-hidden">
+  <!-- Déco background circles -->
+  <div class="absolute top-20 right-10 w-72 h-72 bg-blue-100 rounded-full blur-3xl opacity-40 pointer-events-none"></div>
+  <div class="absolute bottom-20 left-10 w-56 h-56 bg-indigo-100 rounded-full blur-3xl opacity-30 pointer-events-none"></div>
+
+  <div class="hero-content flex-col lg:flex-row-reverse gap-12 max-w-6xl w-full px-6 py-16">
+
+    <!-- Photo -->
+    <div class="relative flex-shrink-0">
+      <div class="avatar">
+        <div class="w-64 md:w-72 rounded-full ring-4 ring-primary ring-offset-base-100 ring-offset-4 shadow-2xl">
+          {% if about and about.profile_image %}
+            <img src="{{ about.profile_image.url }}" alt="Mamath Yacine Niang" class="object-cover">
+          {% elif about and about.profile_image_url %}
+            <img src="{{ about.profile_image_url }}" alt="Mamath Yacine Niang" class="object-cover">
+          {% else %}
+            <div class="w-full h-full bg-gradient-to-br from-blue-200 to-indigo-300 flex items-center justify-center text-5xl font-black text-white">MYN</div>
+          {% endif %}
+        </div>
+      </div>
+      <!-- Floating badges -->
+      <div class="badge badge-primary badge-lg absolute -top-3 -left-6 shadow-lg font-semibold gap-1 py-3">
+        🎓 École Centrale
+      </div>
+      <div class="badge badge-secondary badge-lg absolute -bottom-3 -right-4 shadow-lg font-semibold gap-1 py-3">
+        🤖 IA &amp; Dev
+      </div>
+    </div>
+
+    <!-- Texte -->
+    <div class="max-w-xl text-center lg:text-left">
+      <p class="text-primary font-bold tracking-[0.15em] text-sm uppercase mb-3">Bonjour, je suis</p>
+      <h1 class="text-5xl lg:text-6xl font-black leading-tight mb-4 text-base-content">
+        Mamath Yacine<br>
+        <span class="text-primary">Niang</span>
+      </h1>
+
+      <!-- Tags rôles -->
+      <div class="flex flex-wrap gap-2 justify-center lg:justify-start mb-6">
+        <span class="badge badge-primary">Élève Ingénieur</span>
+        <span class="badge badge-ghost font-medium">Dev Full-Stack</span>
+        <span class="badge badge-ghost font-medium">Data Science</span>
+        <span class="badge badge-ghost font-medium">IA</span>
+      </div>
+
+      <p class="text-base-content/60 text-lg leading-relaxed mb-8">
+        {% if about %}{{ about.bio|truncatewords:25 }}{% else %}Passionné par le développement logiciel, l'IA et l'innovation durable — je construis des solutions à impact réel.{% endif %}
+      </p>
+
+      <div class="flex gap-4 flex-wrap justify-center lg:justify-start mb-8">
+        <a href="{% url 'projects' %}" class="btn btn-primary rounded-full px-8 gap-2">
+          Voir mes projets
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+          </svg>
+        </a>
+        <a href="{% url 'contact' %}" class="btn btn-outline btn-primary rounded-full px-8">Me contacter</a>
+      </div>
+
+      <!-- Socials -->
+      <div class="flex gap-3 justify-center lg:justify-start">
+        <a href="https://www.linkedin.com/in/mamath-yacine-n-12048a320/" target="_blank" rel="noopener"
+           class="btn btn-ghost btn-sm border border-base-300 gap-2 rounded-full hover:border-primary hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a href="mailto:niangmamathyacine@gmail.com"
+           class="btn btn-ghost btn-sm border border-base-300 gap-2 rounded-full hover:border-primary hover:text-primary">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+          </svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <a href="#about" class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 text-base-content/40 text-xs animate-bounce">
+    <span>Découvrir</span>
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+    </svg>
+  </a>
+</section>
+
+
+<!-- ================================================================
+     À PROPOS
+     ================================================================ -->
+<section class="py-24 bg-base-100" id="about">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="badge badge-primary badge-outline mb-3 tracking-widest text-xs font-bold uppercase">À propos</div>
+      <h2 class="text-4xl font-black text-base-content">Qui suis-je ?</h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+      <!-- Texte + infos (3/5) -->
+      <div class="lg:col-span-3 space-y-6">
+        <p class="text-base-content/70 text-lg leading-relaxed">
+          {% if about %}{{ about.bio }}{% else %}Élève ingénieur à l'École Centrale Casablanca, passionné par le développement logiciel, l'IA et l'innovation durable.{% endif %}
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-base-200/60">
+            <div class="badge badge-primary p-3">📧</div>
+            <div>
+              <p class="text-xs text-base-content/50 uppercase tracking-wider font-semibold">Email</p>
+              <p class="text-sm font-medium">niangmamathyacine@gmail.com</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-base-200/60">
+            <div class="badge badge-primary p-3">📍</div>
+            <div>
+              <p class="text-xs text-base-content/50 uppercase tracking-wider font-semibold">Localisation</p>
+              <p class="text-sm font-medium">Casablanca, Maroc</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-base-200/60">
+            <div class="badge badge-primary p-3">📱</div>
+            <div>
+              <p class="text-xs text-base-content/50 uppercase tracking-wider font-semibold">Téléphone</p>
+              <p class="text-sm font-medium">+212 783 346 308</p>
+            </div>
+          </div>
+          <div class="flex items-center gap-3 p-3 rounded-xl bg-success/10 border border-success/20">
+            <div class="badge badge-success p-3">✅</div>
+            <div>
+              <p class="text-xs text-base-content/50 uppercase tracking-wider font-semibold">Disponibilité</p>
+              <p class="text-sm font-semibold text-success">Disponible pour un stage</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex gap-3 flex-wrap">
+          {% if about and about.cv_file %}
+          <a href="{{ about.cv_file.url }}" class="btn btn-primary gap-2" download>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+            </svg>
+            Télécharger mon CV
+          </a>
+          {% endif %}
+          <a href="{% url 'contact' %}" class="btn btn-outline btn-primary">Me contacter</a>
+        </div>
+      </div>
+
+      <!-- Stats (2/5) -->
+      <div class="lg:col-span-2">
+        <div class="stats stats-vertical shadow-lg border border-base-200 w-full">
+          <div class="stat">
+            <div class="stat-figure text-primary text-3xl">🚀</div>
+            <div class="stat-value text-primary">6+</div>
+            <div class="stat-title">Projets réalisés</div>
+            <div class="stat-desc">Dev · Data · IA</div>
+          </div>
+          <div class="stat">
+            <div class="stat-figure text-secondary text-3xl">🏆</div>
+            <div class="stat-value text-secondary">5</div>
+            <div class="stat-title">Certifications</div>
+            <div class="stat-desc">IBM · Google · Coursera</div>
+          </div>
+          <div class="stat">
+            <div class="stat-figure text-accent text-3xl">🎓</div>
+            <div class="stat-value text-accent">ECC</div>
+            <div class="stat-title">École Centrale</div>
+            <div class="stat-desc">Casablanca — En cours</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================================================================
+     COMPÉTENCES — Créatif, sans pourcentages
+     ================================================================ -->
+<section class="py-24 bg-base-200/40" id="skills">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="badge badge-primary badge-outline mb-3 tracking-widest text-xs font-bold uppercase">Compétences</div>
+      <h2 class="text-4xl font-black text-base-content">Ma boîte à outils</h2>
+      <p class="text-base-content/50 mt-3 max-w-md mx-auto">Technologies que j'utilise pour construire des solutions concrètes</p>
+    </div>
+
+    {% if skills_by_category %}
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+      {% for code, cat in skills_by_category.items %}
+      <div class="card bg-base-100 shadow-md border-t-4 {{ cat.border }} hover:shadow-xl transition-shadow duration-300">
+        <div class="card-body">
+          <h3 class="card-title text-base font-bold gap-2">
+            <span class="text-2xl">{{ cat.emoji }}</span>
+            {{ cat.display }}
+          </h3>
+          <div class="divider my-1 opacity-50"></div>
+          <div class="flex flex-wrap gap-2">
+            {% for skill in cat.skills %}
+            <div class="badge {{ cat.badge }} badge-outline gap-1 py-3 px-3 font-semibold text-sm hover:scale-105 transition-transform cursor-default">
+              {{ skill.name }}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Nuage de technologies -->
+    <div class="mt-12 text-center">
+      <p class="text-xs text-base-content/40 uppercase tracking-widest mb-6 font-semibold">Toutes mes technologies</p>
+      <div class="flex flex-wrap gap-2 justify-center max-w-3xl mx-auto">
+        {% for code, cat in skills_by_category.items %}
+          {% for skill in cat.skills %}
+          <span class="badge badge-ghost badge-lg font-medium hover:-translate-y-0.5 transition-transform cursor-default">{{ skill.name }}</span>
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+    {% else %}
+    <p class="text-center text-base-content/40">Compétences à venir.</p>
+    {% endif %}
+  </div>
+</section>
+
+
+<!-- ================================================================
+     PROJETS VEDETTES
+     ================================================================ -->
+<section class="py-24 bg-base-100" id="projects">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14 relative">
+      <div class="badge badge-primary badge-outline mb-3 tracking-widest text-xs font-bold uppercase">Projets</div>
+      <h2 class="text-4xl font-black text-base-content">Mes réalisations phares</h2>
+      <a href="{% url 'projects' %}" class="btn btn-ghost btn-sm text-primary mt-3 gap-1">
+        Voir tous les projets
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+    </div>
+
+    {% if featured_projects %}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {% for project in featured_projects %}
+      <div class="card bg-base-100 border border-base-200 shadow-md hover:-translate-y-1 hover:shadow-xl transition-all duration-300">
+        <!-- Image principale ou gradient placeholder -->
+        {% with main_img=project.get_main_image %}
+        {% if main_img %}
+        <figure><img src="{{ main_img }}" alt="{{ project.title }}" class="h-44 w-full object-cover"/></figure>
+        {% else %}
+        <div class="h-36 flex items-center justify-center rounded-t-2xl
+          {% if project.category == 'ia' %}bg-gradient-to-br from-purple-50 to-indigo-100
+          {% elif project.category == 'data' %}bg-gradient-to-br from-green-50 to-emerald-100
+          {% elif project.category == 'dev' %}bg-gradient-to-br from-blue-50 to-sky-100
+          {% else %}bg-gradient-to-br from-amber-50 to-orange-100{% endif %}">
+          <span class="text-5xl opacity-60">
+            {% if project.category == 'ia' %}🤖
+            {% elif project.category == 'data' %}📊
+            {% elif project.category == 'dev' %}💻
+            {% else %}🎓{% endif %}
+          </span>
+        </div>
+        {% endif %}
+        {% endwith %}
+
+        <div class="card-body gap-3">
+          <div class="flex items-center justify-between">
+            <div class="badge badge-sm font-semibold
+              {% if project.category == 'dev' %}badge-primary
+              {% elif project.category == 'data' %}badge-success
+              {% elif project.category == 'ia' %}badge-secondary
+              {% else %}badge-warning{% endif %}">
+              {{ project.get_category_display }}
+            </div>
+            <div class="flex gap-2">
+              {% if project.github_url %}
+              <a href="{{ project.github_url }}" target="_blank" rel="noopener" class="btn btn-ghost btn-xs" aria-label="GitHub">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12c0 4.42 2.87 8.17 6.84 9.49.5.09.68-.22.68-.48v-1.69c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.61.07-.61 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.08.63-1.33-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.64 0 0 .84-.27 2.75 1.02A9.58 9.58 0 0112 6.8c.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.37.2 2.39.1 2.64.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.68-4.57 4.93.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10.01 10.01 0 0022 12c0-5.52-4.48-10-10-10z"/>
+                </svg>
+              </a>
+              {% endif %}
+              {% if project.demo_url %}
+              <a href="{{ project.demo_url }}" target="_blank" rel="noopener" class="btn btn-ghost btn-xs" aria-label="Demo">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+                </svg>
+              </a>
+              {% endif %}
+            </div>
+          </div>
+
+          <h3 class="card-title text-base font-bold leading-tight">{{ project.title }}</h3>
+          <p class="text-sm text-base-content/60 leading-relaxed flex-1">{{ project.short_description }}</p>
+
+          <div class="flex flex-wrap gap-1 mt-1">
+            {% for tech in project.get_tech_list %}
+            <span class="badge badge-ghost badge-sm font-medium">{{ tech }}</span>
+            {% endfor %}
+          </div>
+
+          <div class="card-actions justify-end mt-2">
+            <a href="{% url 'project_detail' project.slug %}" class="btn btn-primary btn-sm rounded-full gap-1">
+              Voir le détail
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="text-center py-16 text-base-content/40">
+      <p class="text-5xl mb-4">🚧</p>
+      <p>Les projets seront bientôt ajoutés.</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+
+<!-- ================================================================
+     PARCOURS — Timeline DaisyUI
+     ================================================================ -->
+<section class="py-24 bg-base-200/40" id="timeline">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-14">
+      <div class="badge badge-primary badge-outline mb-3 tracking-widest text-xs font-bold uppercase">Parcours</div>
+      <h2 class="text-4xl font-black text-base-content">Expériences &amp; Formation</h2>
+    </div>
+
+    <!-- Tabs -->
+    <div role="tablist" class="tabs tabs-lifted tabs-lg justify-center mb-10">
+      <input type="radio" name="timeline_tabs" role="tab" class="tab font-semibold" aria-label="💼 Expériences" checked="checked" />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6 lg:p-10">
+        <!-- Timeline Expériences -->
+        <ul class="timeline timeline-vertical">
+          {% for exp in experiences %}
+          <li>
+            {% if not forloop.first %}<hr class="bg-primary"/>{% endif %}
+            <div class="timeline-start md:text-end max-w-xs">
+              <time class="font-mono text-sm text-base-content/50 font-medium">{{ exp.start_date }}{% if exp.end_date %} — {{ exp.end_date }}{% endif %}</time>
+            </div>
+            <div class="timeline-middle">
+              <div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white text-xs font-bold shadow-md">
+                {% if exp.exp_type == 'job' %}💼{% elif exp.exp_type == 'project' %}🚀{% else %}📚{% endif %}
+              </div>
+            </div>
+            <div class="timeline-end timeline-box shadow-md border border-base-200 mb-8 max-w-sm">
+              <div class="badge badge-sm mb-2
+                {% if exp.exp_type == 'job' %}badge-primary
+                {% elif exp.exp_type == 'project' %}badge-secondary
+                {% else %}badge-warning{% endif %}">
+                {{ exp.get_exp_type_display }}
+              </div>
+              <h3 class="font-bold text-base mb-1">{{ exp.title }}</h3>
+              <p class="text-primary text-sm font-semibold mb-2">{{ exp.organization }}</p>
+              <p class="text-sm text-base-content/60 leading-relaxed">{{ exp.description }}</p>
+            </div>
+            {% if not forloop.last %}<hr class="bg-primary"/>{% endif %}
+          </li>
+          {% empty %}
+          <li><p class="text-base-content/40 text-center p-8">Expériences à venir.</p></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <input type="radio" name="timeline_tabs" role="tab" class="tab font-semibold" aria-label="🎓 Formation" />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6 lg:p-10">
+        <!-- Timeline Formation -->
+        <ul class="timeline timeline-vertical">
+          {% for edu in educations %}
+          <li>
+            {% if not forloop.first %}<hr class="bg-accent"/>{% endif %}
+            <div class="timeline-start md:text-end max-w-xs">
+              <time class="font-mono text-sm text-base-content/50 font-medium">{{ edu.period }}</time>
+            </div>
+            <div class="timeline-middle">
+              <div class="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white text-xs shadow-md">🎓</div>
+            </div>
+            <div class="timeline-end timeline-box shadow-md border border-base-200 mb-8 max-w-sm">
+              <h3 class="font-bold text-base mb-1">{{ edu.degree }}</h3>
+              <p class="text-accent text-sm font-semibold mb-2">{{ edu.school }}</p>
+              {% if edu.description %}<p class="text-sm text-base-content/60">{{ edu.description }}</p>{% endif %}
+            </div>
+            {% if not forloop.last %}<hr class="bg-accent"/>{% endif %}
+          </li>
+          {% empty %}
+          <li><p class="text-base-content/40 text-center p-8">Formation à venir.</p></li>
+          {% endfor %}
+        </ul>
+      </div>
+
+      <input type="radio" name="timeline_tabs" role="tab" class="tab font-semibold" aria-label="🏆 Certifications" />
+      <div role="tabpanel" class="tab-content bg-base-100 border-base-300 rounded-box p-6 lg:p-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          {% for cert in certifications %}
+          <div class="card card-compact bg-base-100 border border-base-200 shadow-sm hover:shadow-md transition-shadow">
+            <div class="card-body">
+              <div class="flex items-start gap-3">
+                <div class="text-2xl mt-0.5">🏆</div>
+                <div>
+                  <h4 class="font-bold text-sm leading-tight mb-1">{{ cert.name }}</h4>
+                  <p class="text-primary text-xs font-semibold">{{ cert.issuer }}</p>
+                  {% if cert.date %}<p class="text-xs text-base-content/40 mt-0.5">{{ cert.date }}</p>{% endif %}
+                  {% if cert.credential_url %}
+                  <a href="{{ cert.credential_url }}" target="_blank" rel="noopener"
+                     class="btn btn-ghost btn-xs text-primary mt-2 -ml-2 gap-1">
+                    Voir →
+                  </a>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+          </div>
+          {% empty %}
+          <p class="col-span-3 text-center text-base-content/40 p-8">Certifications à venir.</p>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ================================================================
+     CTA FINAL
+     ================================================================ -->
+<section class="py-24 bg-gradient-to-r from-primary to-blue-700 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-10 left-20 w-40 h-40 bg-white rounded-full blur-2xl"></div>
+    <div class="absolute bottom-10 right-20 w-56 h-56 bg-white rounded-full blur-3xl"></div>
+  </div>
+  <div class="max-w-2xl mx-auto px-6 text-center relative">
+    <div class="badge bg-white/20 text-white border-white/30 mb-4 font-semibold">Disponible maintenant</div>
+    <h2 class="text-4xl font-black text-white mb-4">Un projet ou un stage ?</h2>
+    <p class="text-white/70 text-lg mb-8">Je suis à la recherche d'une opportunité. Parlons de ce qu'on peut construire ensemble.</p>
+    <div class="flex gap-4 justify-center flex-wrap">
+      <a href="{% url 'contact' %}" class="btn bg-white text-primary hover:bg-white/90 rounded-full px-10 font-bold border-0">
+        Travaillons ensemble
+      </a>
+      <a href="https://www.linkedin.com/in/mamath-yacine-n-12048a320/" target="_blank" rel="noopener"
+         class="btn btn-outline border-white text-white hover:bg-white hover:text-primary rounded-full px-8">
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

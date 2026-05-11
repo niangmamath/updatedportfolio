@@ -1,0 +1,29 @@
+# Virtualenv
+env/
+venv/
+.venv/
+
+# Secrets
+.env
+*.env
+
+# Django local
+db.sqlite3
+db.sqlite3-journal
+staticfiles/
+media/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Claude Code
+.claude/
