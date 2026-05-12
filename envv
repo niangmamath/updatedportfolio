@@ -1,0 +1,50 @@
+# ============================================================
+#  PORTFOLIO — Variables d'environnement
+#  NE JAMAIS committer ce fichier dans Git !
+# ============================================================
+
+
+# ------------------------------------------------------------
+#  DJANGO
+# ------------------------------------------------------------
+SECRET_KEY=django-insecure-ztl75c!=7rtx)p+9y@ezat_6nf%^3-zn4&6uuqdiym)%m4s1w$
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+
+# ------------------------------------------------------------
+#  BASE DE DONNÉES PostgreSQL
+#  Remplis avec tes identifiants PostgreSQL
+# ------------------------------------------------------------
+DB_ENGINE=django.db.backends.postgresql
+DB_NAME=portfolio_db
+DB_USER=postgres
+DB_PASSWORD=8GvMgTX8jfQ5!9d
+DB_HOST=database-1.cxc62um4uef4.eu-north-1.rds.amazonaws.com
+DB_PORT=5432
+DB_SSLMODE=verify-full
+DB_SSLROOTCERT=global-bundle.pem
+
+
+# ------------------------------------------------------------
+#  MÉDIAS & FICHIERS STATIQUES
+# ------------------------------------------------------------
+MEDIA_URL=/media/
+STATIC_URL=/static/
+
+
+# ------------------------------------------------------------
+#  EMAIL (optionnel — pour notifier les messages de contact)
+# ------------------------------------------------------------
+EMAIL_BACKEND=django.core.mail.backends.smtp.EmailBackend
+EMAIL_HOST=smtp.gmail.com
+EMAIL_PORT=587
+EMAIL_USE_TLS=True
+EMAIL_HOST_USER=niangmamathyacine@gmail.com
+EMAIL_HOST_PASSWORD=M!EwGpQ8Ng6mKpN
+
+
+# ------------------------------------------------------------
+#  CLOUDINARY (images hébergées en externe)
+# ------------------------------------------------------------
+CLOUDINARY_URL=cloudinary://api_key:api_secret@dlqwxsufy

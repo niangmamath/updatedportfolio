@@ -1,0 +1,1362 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "about"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "certification"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "contactmessage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "education"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "experience"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "project"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "projectimage"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "portfolio",
+    "model": "skill"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "a4bl8pytoeu5v1jk0sgyxu95gz9vqt7o",
+  "fields": {
+    "session_data": ".eJxVjMsOwiAQAP9lz4YA5dUevfsNZFlYqRqalPZk_HfTpAe9zkzmDRH3rca9lzXOGSZQcPllCelZ2iHyA9t9EbS0bZ2TOBJx2i5uSy6v69n-DSr2ChMwausTlmJdoaA9Kx0Ck0xG-aQkBmu0HdlLyT6wI5e8GR0ZE_JAg9Xw-QLqCzeC:1wLlyA:LQob8PwkPXs-sL4OOLN-9X74GamrL72EM9x5zcCnZik",
+    "expire_date": "2026-05-23T18:00:06.261Z"
+  }
+},
+{
+  "model": "portfolio.about",
+  "pk": 1,
+  "fields": {
+    "name": "Mamath Yacine Niang",
+    "title": "Élève Ingénieur — Développement · Data · IA",
+    "bio": "Élève ingénieur à l'École Centrale Casablanca, passionné par le développement logiciel, l'IA et l'innovation durable. J'ai de l'expérience en développement full-stack et en projets techniques à impact réel. Je construis des solutions concrètes, de la conception au déploiement, avec un intérêt particulier pour l'intelligence artificielle générative et l'automatisation. Actuellement à la recherche d'un stage assistant ingénieur.",
+    "profile_image": "",
+    "profile_image_url": "https://res.cloudinary.com/dlqwxsufy/image/upload/v1778232455/photo_portfolio_cgbfco.jpg",
+    "cv_file": "",
+    "email": "niangmamathyacine@gmail.com",
+    "phone": "+212 783 346 308",
+    "location": "Casablanca, Maroc",
+    "linkedin_url": "https://www.linkedin.com/in/mamath-yacine-n-12048a320/",
+    "github_url": ""
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 1,
+  "fields": {
+    "name": "Python",
+    "category": "dev",
+    "level": 85,
+    "icon": "",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 2,
+  "fields": {
+    "name": "HTML / CSS",
+    "category": "dev",
+    "level": 80,
+    "icon": "",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 3,
+  "fields": {
+    "name": "JavaScript",
+    "category": "dev",
+    "level": 70,
+    "icon": "",
+    "order": 3
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 4,
+  "fields": {
+    "name": "Django",
+    "category": "dev",
+    "level": 72,
+    "icon": "",
+    "order": 4
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 5,
+  "fields": {
+    "name": "Node.js / Express",
+    "category": "dev",
+    "level": 65,
+    "icon": "",
+    "order": 5
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 6,
+  "fields": {
+    "name": "Machine Learning",
+    "category": "data",
+    "level": 78,
+    "icon": "",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 7,
+  "fields": {
+    "name": "Scikit-learn / Pandas",
+    "category": "data",
+    "level": 80,
+    "icon": "",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 8,
+  "fields": {
+    "name": "SQL",
+    "category": "data",
+    "level": 75,
+    "icon": "",
+    "order": 3
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 9,
+  "fields": {
+    "name": "MongoDB",
+    "category": "data",
+    "level": 65,
+    "icon": "",
+    "order": 4
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 10,
+  "fields": {
+    "name": "Power BI",
+    "category": "data",
+    "level": 60,
+    "icon": "",
+    "order": 5
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 11,
+  "fields": {
+    "name": "IA Générative (LLM)",
+    "category": "ia",
+    "level": 75,
+    "icon": "",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 12,
+  "fields": {
+    "name": "Agentic AI",
+    "category": "ia",
+    "level": 68,
+    "icon": "",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 13,
+  "fields": {
+    "name": "Fine-tuning LLM",
+    "category": "ia",
+    "level": 65,
+    "icon": "",
+    "order": 3
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 14,
+  "fields": {
+    "name": "Automatisation (n8n)",
+    "category": "ia",
+    "level": 60,
+    "icon": "",
+    "order": 4
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 15,
+  "fields": {
+    "name": "GitHub",
+    "category": "tools",
+    "level": 80,
+    "icon": "",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.skill",
+  "pk": 16,
+  "fields": {
+    "name": "Gestion de projet",
+    "category": "tools",
+    "level": 75,
+    "icon": "",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 1,
+  "fields": {
+    "title": "CV Optimizer",
+    "slug": "cv-optimizer",
+    "short_description": "Application web IA qui analyse un CV face à une offre d'emploi, calcule un score ATS et réécrit automatiquement le CV.",
+    "description": "Application web IA de bout en bout développée en 2025. Elle permet d'analyser un CV face à une offre d'emploi, de calculer un score de compatibilité ATS, de fournir des recommandations ciblées et de réécrire automatiquement le CV grâce à l'intelligence artificielle.\r\n\r\nFonctionnalités principales :\r\n- Upload et parsing de CV (PDF)\r\n- Analyse sémantique face à une offre d'emploi\r\n- Score ATS avec détail des critères\r\n- Recommandations personnalisées\r\n- Réécriture automatique du CV par IA générative",
+    "category": "ia",
+    "tech_stack": "Node.js, IA , HTML/CSS/JS",
+    "image": "",
+    "github_url": "https://github.com/niangmamath/cv",
+    "demo_url": "",
+    "report_pdf": "projects/reports/rapport_cv_optimizer.pdf",
+    "featured": true,
+    "order": 1,
+    "created_at": "2025-06-01"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 2,
+  "fields": {
+    "title": "RAMGreenConnect",
+    "slug": "ramgreenconnect",
+    "short_description": "Plateforme full-stack de durabilité pour Royal Air Maroc : empreinte carbone, gamification et modèle économique SAF.",
+    "description": "Développement d'une plateforme full-stack dans le cadre d'un projet innovation avec Royal Air Maroc. La plateforme intègre :\r\n\r\n- Un calculateur d'empreinte carbone des vols\r\n- Un système de gamification pour encourager des choix de voyage responsables\r\n- Un modèle économique autour du Sustainable Aviation Fuel (SAF)\r\n- Une interface utilisateur intuitive et responsive\r\n\r\nProjet réalisé en équipe avec une approche agile et une attention particulière à l'expérience utilisateur.",
+    "category": "dev",
+    "tech_stack": "Full-Stack, node.js, JavaScript, Base de données(mongo db), API REST",
+    "image": "",
+    "github_url": "https://github.com/niangmamath/projetinnovation",
+    "demo_url": "",
+    "report_pdf": "projects/reports/projet_innovation.pdf",
+    "featured": true,
+    "order": 2,
+    "created_at": "2025-03-01"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 3,
+  "fields": {
+    "title": "Prédiction Intention d'Achat",
+    "slug": "prediction-intention-achat",
+    "short_description": "Système ML de prédiction sur 12 000 sessions e-commerce avec classes déséquilibrées — Random Forest, F1=0.65.",
+    "description": "Système de prédiction de l'intention d'achat sur 12 000 sessions e-commerce avec classes déséquilibrées.\r\n\r\nDémarche suivie :\r\n- Exploration et nettoyage des données\r\n- Gestion du déséquilibre des classes (SMOTE, class_weight)\r\n- Comparaison de trois modèles : Logistic Regression, Decision Tree, Random Forest\r\n- Random Forest retenu avec un F1-Score de 0.65\r\n- Optimisation par compression du modèle pour déploiement\r\n\r\nProjet mettant en avant des compétences avancées en machine learning et en évaluation de modèles sur données déséquilibrées.",
+    "category": "data",
+    "tech_stack": "Python, Scikit-learn, Pandas, SMOTE, Random Forest",
+    "image": "",
+    "github_url": "",
+    "demo_url": "",
+    "report_pdf": "projects/reports/rapport_lab2_EEA.pdf",
+    "featured": true,
+    "order": 3,
+    "created_at": "2026-01-01"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 4,
+  "fields": {
+    "title": "Détection Cancer du Col de l'Utérus",
+    "slug": "detection-cancer-col-uterus",
+    "short_description": "Application ML de détection précoce développée en une semaine lors d'une Coding Week — analyse de données médicales.",
+    "description": "Projet réalisé en une semaine dans le cadre d'une Coding Week (avril 2025). L'objectif était d'appliquer le machine learning dans le domaine de la santé.\r\n\r\nRéalisations :\r\n- Analyse et prétraitement de données médicales réelles\r\n- Application d'algorithmes avancés de classification\r\n- Évaluation des modèles avec métriques adaptées au médical (sensibilité, spécificité)\r\n- Interface de prédiction pour aider à la détection précoce\r\n- Présentation des résultats à un jury",
+    "category": "ia",
+    "tech_stack": "Python, Scikit-learn, Pandas, Machine Learning médical",
+    "image": "",
+    "github_url": "https://github.com/AymaneSlayer/Codingweek",
+    "demo_url": "",
+    "report_pdf": "projects/reports/rapport_cancer_prediction.pdf",
+    "featured": true,
+    "order": 4,
+    "created_at": "2026-04-01"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 5,
+  "fields": {
+    "title": "Système Énergétique Hybride",
+    "slug": "systeme-energetique-hybride",
+    "short_description": "Système hybride solaire/éolien avec stockage argile et application de monitoring en temps réel.",
+    "description": "Projet Learning by Doing mené en équipe à l'École Centrale Casablanca.\n\nObjectif : développer un système hybride combinant énergie solaire et éolienne, associé à un dispositif de stockage innovant utilisant des briques d'argile.\n\nContributions :\n- Conception et dimensionnement du système énergétique hybride\n- Développement d'une application permettant aux utilisateurs de monitorer leur consommation énergétique\n- Implémentation du basculement automatique entre sources selon les conditions météorologiques en temps réel\n- Interface de contrôle intuitive",
+    "category": "academic",
+    "tech_stack": "Python, IoT, API météo, HTML/CSS/JS",
+    "image": "",
+    "github_url": "",
+    "demo_url": "",
+    "report_pdf": "",
+    "featured": false,
+    "order": 5,
+    "created_at": "2025-01-01"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 6,
+  "fields": {
+    "title": "Impact COVID-19 en Afrique Subsaharienne",
+    "slug": "impact-covid19-afrique-subsaharienne",
+    "short_description": "Dashboard Power BI (CRISP-DM) analysant l'impact socio-économique du COVID-19 sur 2 428 répondants dans 5 pays africains. 72% de baisse de revenus révélées.",
+    "description": "<div class=\"prose max-w-none space-y-4\">\n  <p class=\"text-base text-base-content/70 leading-relaxed\">\n    Analyse de données réalisée sur <strong>Power BI</strong> selon la méthodologie <strong>CRISP-DM</strong>, \n    visant à quantifier l'impact socio-économique de la pandémie COVID-19 sur les populations d'Afrique Subsaharienne.\n    Le rapport complet est consultable ci-dessous.\n  </p>\n\n  <h3 class=\"text-lg font-bold mt-6 mb-2\">Contexte & Problématique</h3>\n  <p class=\"text-base-content/70\">\n    L'Afrique subsaharienne se caractérise par une forte proportion d'emplois informels. \n    La question centrale : comment ces travailleurs, souvent sans filets de sécurité sociale, \n    ont-ils survécu financièrement durant la crise ?\n  </p>\n\n  <h3 class=\"text-lg font-bold mt-6 mb-2\">Données analysées</h3>\n  <p class=\"text-base-content/70\">\n    Le dataset <code class=\"bg-base-200 px-1 rounded\">subsaharan.csv</code> regroupe \n    <strong>2 428 répondants</strong> issus de 5 pays : Afrique du Sud, Kenya, Côte d'Ivoire, \n    Mozambique et Nigeria. Variables clés : genre, âge, type d'emploi, variation de revenu, \n    capacité de survie financière et sources d'aide.\n  </p>\n\n  <h3 class=\"text-lg font-bold mt-6 mb-2\">Résultats clés</h3>\n  <ul class=\"space-y-2 text-base-content/70\">\n    <li class=\"flex items-start gap-2\"><span class=\"text-error font-bold\">72,2%</span> des répondants ont déclaré une baisse de revenu</li>\n    <li class=\"flex items-start gap-2\"><span class=\"text-error font-bold\">33%</span> ont perdu leur emploi (760 actifs sur 1 290)</li>\n    <li class=\"flex items-start gap-2\"><span class=\"text-warning font-bold\">45%</span> présentent une vulnérabilité financière extrême (moins d'1 mois de survie)</li>\n    <li class=\"flex items-start gap-2\"><span class=\"text-base-content font-bold\">&gt; 188%</span> d'impact pour les auto-entrepreneurs et travailleurs indépendants</li>\n    <li class=\"flex items-start gap-2\"><span class=\"text-success font-bold\">68,33%</span> des utilisateurs Mobile Money maintiennent leurs transactions malgré la crise</li>\n  </ul>\n\n  <p class=\"text-xs text-base-content/40 mt-6 pt-4 border-t border-base-200\">\n    Réalisé en binôme avec Sette TOURÉ — École Centrale Casablanca, Janvier 2026.\n  </p>\n</div>",
+    "category": "data",
+    "tech_stack": "Power BI, DAX, CRISP-DM, Analyse de données, CSV",
+    "image": "",
+    "github_url": "",
+    "demo_url": "",
+    "report_pdf": "projects/reports/Rapport_Projet_Data_Analysis_GROUPE60.pdf",
+    "featured": true,
+    "order": 3,
+    "created_at": "2026-01-18"
+  }
+},
+{
+  "model": "portfolio.project",
+  "pk": 7,
+  "fields": {
+    "title": "Machine Learning for Quality Control",
+    "slug": "machine-learning-for-quality-control",
+    "short_description": "pipeline ML pour la détection de défaut dans la fabrication de semi-conducteur",
+    "description": "Ce projet démontre un pipeline ML production-ready rigoureux pour la détection de défauts dans la\r\nfabrication de semiconducteurs. Le défi principal — déséquilibre 1:17, valeurs manquantes massives, 590 features —\r\nest traité méthodiquement. AdaBoost est le modèle recommandé (F1=0.9666) pour son équilibre Precision/Recall.\r\nPour les applications à tolérance zéro défaut, Random Forest (Recall=1.000) est la référence. Les améliorations\r\nprioritaires sont : l'optimisation du seuil de décision via la courbe ROC, le remplacement par XGBoost, et une\r\ncross-validation stratifiée.",
+    "category": "ia",
+    "tech_stack": "Python,ML,Scikit-learn,Pandas",
+    "image": "",
+    "github_url": "",
+    "demo_url": "",
+    "report_pdf": "projects/reports/rapport_lab1_SECOM_Mamath_Yacine_NIANG.pdf",
+    "featured": false,
+    "order": 0,
+    "created_at": null
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 1,
+  "fields": {
+    "title": "Stagiaire Web",
+    "organization": "Association Amal Biladi",
+    "exp_type": "job",
+    "start_date": "Juin 2025",
+    "end_date": "Août 2025",
+    "description": "Gestion et optimisation du site web (Magento), développement de fonctionnalités interactives et amélioration des performances techniques.",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 2,
+  "fields": {
+    "title": "RAMGreenConnect — Projet Innovation",
+    "organization": "Royal Air Maroc / École Centrale Casablanca",
+    "exp_type": "project",
+    "start_date": "2025",
+    "end_date": "2025",
+    "description": "Développement d'une plateforme full-stack intégrant calcul d'empreinte carbone, gamification et modèle économique SAF pour encourager des choix de voyage responsables.",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.experience",
+  "pk": 3,
+  "fields": {
+    "title": "Prédiction Intention d'Achat",
+    "organization": "Projet Personnel",
+    "exp_type": "project",
+    "start_date": "Janvier 2026",
+    "end_date": "Janvier 2026",
+    "description": "Système ML de prédiction sur 12 000 sessions e-commerce avec classes déséquilibrées. Random Forest avec F1-Score de 0.65, optimisé par compression pour déploiement.",
+    "order": 3
+  }
+},
+{
+  "model": "portfolio.education",
+  "pk": 1,
+  "fields": {
+    "degree": "Diplôme d'Ingénierie Généraliste",
+    "school": "École Centrale Casablanca",
+    "period": "En cours",
+    "description": "Formation d'ingénieur généraliste avec spécialisation en développement logiciel, data science et intelligence artificielle.",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.education",
+  "pk": 2,
+  "fields": {
+    "degree": "Classes Préparatoires aux Grandes Écoles (CPGE)",
+    "school": "CPGE de Thiès, Sénégal",
+    "period": "2022 – 2024",
+    "description": "Formation intensive en mathématiques, physique et sciences de l'ingénieur.",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.education",
+  "pk": 3,
+  "fields": {
+    "degree": "Baccalauréat Scientifique Série S2 — Mention Bien",
+    "school": "Lycée de Keur Madiabel",
+    "period": "2022",
+    "description": "",
+    "order": 3
+  }
+},
+{
+  "model": "portfolio.certification",
+  "pk": 1,
+  "fields": {
+    "name": "Databases and SQL for Data Science with Python",
+    "issuer": "IBM / Coursera",
+    "date": "2024",
+    "credential_url": "",
+    "order": 1
+  }
+},
+{
+  "model": "portfolio.certification",
+  "pk": 2,
+  "fields": {
+    "name": "LLM Fine-Tuning and Customization Training",
+    "issuer": "Simplilearn / Coursera",
+    "date": "2024",
+    "credential_url": "",
+    "order": 2
+  }
+},
+{
+  "model": "portfolio.certification",
+  "pk": 3,
+  "fields": {
+    "name": "SOAP Web Services with JAX-WS",
+    "issuer": "LearnQuest / Coursera",
+    "date": "2024",
+    "credential_url": "",
+    "order": 3
+  }
+},
+{
+  "model": "portfolio.certification",
+  "pk": 4,
+  "fields": {
+    "name": "Google Project Management",
+    "issuer": "Google / Coursera",
+    "date": "2024",
+    "credential_url": "",
+    "order": 4
+  }
+},
+{
+  "model": "portfolio.certification",
+  "pk": 5,
+  "fields": {
+    "name": "Front-End Developer",
+    "issuer": "Coursera",
+    "date": "2024",
+    "credential_url": "",
+    "order": 5
+  }
+},
+{
+  "model": "portfolio.contactmessage",
+  "pk": 1,
+  "fields": {
+    "name": "mamath yacine niang",
+    "email": "mouhamadn63@gmail.com",
+    "subject": "dvdisdb",
+    "message": "sshvshvhsd",
+    "created_at": "2026-05-09T15:40:33.811Z",
+    "is_read": false
+  }
+},
+{
+  "model": "portfolio.contactmessage",
+  "pk": 2,
+  "fields": {
+    "name": "mamath yacine niang",
+    "email": "mouhamadn63@gmail.com",
+    "subject": "test",
+    "message": "bonjour",
+    "created_at": "2026-05-10T14:20:08.317Z",
+    "is_read": false
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add À propos",
+    "content_type": [
+      "portfolio",
+      "about"
+    ],
+    "codename": "add_about"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change À propos",
+    "content_type": [
+      "portfolio",
+      "about"
+    ],
+    "codename": "change_about"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete À propos",
+    "content_type": [
+      "portfolio",
+      "about"
+    ],
+    "codename": "delete_about"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view À propos",
+    "content_type": [
+      "portfolio",
+      "about"
+    ],
+    "codename": "view_about"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Certification",
+    "content_type": [
+      "portfolio",
+      "certification"
+    ],
+    "codename": "add_certification"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Certification",
+    "content_type": [
+      "portfolio",
+      "certification"
+    ],
+    "codename": "change_certification"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Certification",
+    "content_type": [
+      "portfolio",
+      "certification"
+    ],
+    "codename": "delete_certification"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Certification",
+    "content_type": [
+      "portfolio",
+      "certification"
+    ],
+    "codename": "view_certification"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Message de contact",
+    "content_type": [
+      "portfolio",
+      "contactmessage"
+    ],
+    "codename": "add_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Message de contact",
+    "content_type": [
+      "portfolio",
+      "contactmessage"
+    ],
+    "codename": "change_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Message de contact",
+    "content_type": [
+      "portfolio",
+      "contactmessage"
+    ],
+    "codename": "delete_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Message de contact",
+    "content_type": [
+      "portfolio",
+      "contactmessage"
+    ],
+    "codename": "view_contactmessage"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Formation",
+    "content_type": [
+      "portfolio",
+      "education"
+    ],
+    "codename": "add_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Formation",
+    "content_type": [
+      "portfolio",
+      "education"
+    ],
+    "codename": "change_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Formation",
+    "content_type": [
+      "portfolio",
+      "education"
+    ],
+    "codename": "delete_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Formation",
+    "content_type": [
+      "portfolio",
+      "education"
+    ],
+    "codename": "view_education"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Expérience",
+    "content_type": [
+      "portfolio",
+      "experience"
+    ],
+    "codename": "add_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Expérience",
+    "content_type": [
+      "portfolio",
+      "experience"
+    ],
+    "codename": "change_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Expérience",
+    "content_type": [
+      "portfolio",
+      "experience"
+    ],
+    "codename": "delete_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Expérience",
+    "content_type": [
+      "portfolio",
+      "experience"
+    ],
+    "codename": "view_experience"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Projet",
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "codename": "add_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Projet",
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "codename": "change_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Projet",
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "codename": "delete_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Projet",
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "codename": "view_project"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Compétence",
+    "content_type": [
+      "portfolio",
+      "skill"
+    ],
+    "codename": "add_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Compétence",
+    "content_type": [
+      "portfolio",
+      "skill"
+    ],
+    "codename": "change_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Compétence",
+    "content_type": [
+      "portfolio",
+      "skill"
+    ],
+    "codename": "delete_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Compétence",
+    "content_type": [
+      "portfolio",
+      "skill"
+    ],
+    "codename": "view_skill"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add Image du projet",
+    "content_type": [
+      "portfolio",
+      "projectimage"
+    ],
+    "codename": "add_projectimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change Image du projet",
+    "content_type": [
+      "portfolio",
+      "projectimage"
+    ],
+    "codename": "change_projectimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete Image du projet",
+    "content_type": [
+      "portfolio",
+      "projectimage"
+    ],
+    "codename": "delete_projectimage"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view Image du projet",
+    "content_type": [
+      "portfolio",
+      "projectimage"
+    ],
+    "codename": "view_projectimage"
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1200000$cfVnEyMjDTnWVKtV2FuZrZ$tYL4SaAalxoMpSSeaIQZ530xxguHp4BpD9jRsjrzEp4=",
+    "last_login": "2026-05-09T18:00:06.167Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "niangmamathyacine@gmail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-05-09T17:57:58.613Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2026-05-10T10:32:08.840Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "6",
+    "object_repr": "Impact COVID-19 en Afrique Subsaharienne",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Report pdf\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2026-05-10T11:15:49.086Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "2",
+    "object_repr": "RAMGreenConnect",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Report pdf\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2026-05-10T11:20:15.553Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "2",
+    "object_repr": "RAMGreenConnect",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Tech stack\", \"Github url\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2026-05-10T11:45:18.386Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "1",
+    "object_repr": "CV Optimizer",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Tech stack\", \"Github url\", \"Report pdf\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2026-05-10T12:02:56.350Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "4",
+    "object_repr": "Détection Cancer du Col de l'Utérus",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Github url\", \"Report pdf\", \"Created at\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2026-05-10T12:10:24.174Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "3",
+    "object_repr": "Prédiction Intention d'Achat",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Description\", \"Report pdf\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2026-05-10T13:38:42.312Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "7",
+    "object_repr": "Machine Learning for Quality Control",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2026-05-10T13:40:40.608Z",
+    "user": [
+      "admin"
+    ],
+    "content_type": [
+      "portfolio",
+      "project"
+    ],
+    "object_id": "7",
+    "object_repr": "Machine Learning for Quality Control",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Report pdf\"]}}]"
+  }
+}
+]
