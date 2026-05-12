@@ -1,3 +1,5 @@
+import logging
+
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from django.core.mail import send_mail
@@ -5,6 +7,8 @@ from django.conf import settings
 from django.http import HttpResponse, Http404
 import requests as _requests
 from .models import About, Skill, Project, Experience, Education, Certification, ContactMessage
+
+logger = logging.getLogger(__name__)
 
 CATEGORY_META = {
     'dev':       {'emoji': '💻', 'border': 'border-t-blue-500',   'badge': 'badge-primary',   'bg': 'bg-blue-50'},
@@ -70,32 +74,54 @@ def project_detail(request, slug):
     return render(request, 'portfolio/project_detail.html', context)
 
 
+def _fetch_cloudinary_pdf(report_pdf):
+    """Récupère le PDF depuis Cloudinary. Essaie l'URL directe, puis signée."""
+    candidates = []
+
+    direct_url = report_pdf.url
+    candidates.append(('direct', direct_url))
+
+    try:
+        import cloudinary.utils
+        public_id = 'media/' + report_pdf.name
+        signed_url, _ = cloudinary.utils.cloudinary_url(
+            public_id,
+            resource_type='raw',
+            type='upload',
+            sign_url=True,
+        )
+        candidates.append(('signed', signed_url))
+    except Exception as e:
+        logger.warning('Cloudinary signed URL generation failed: %s', e)
+
+    last_error = None
+    for label, url in candidates:
+        try:
+            resp = _requests.get(url, timeout=30)
+            resp.raise_for_status()
+            return resp.content
+        except Exception as e:
+            last_error = e
+            logger.warning('PDF fetch via %s URL failed (%s): %s', label, url, e)
+
+    raise Http404(f'PDF Cloudinary inaccessible: {last_error}')
+
+
 def pdf_proxy(request, slug):
     project = get_object_or_404(Project, slug=slug)
     if not project.report_pdf:
-        raise Http404
+        raise Http404('Aucun rapport PDF associé à ce projet')
 
     url = project.report_pdf.url
     if url.startswith('http'):
-        # Fichier sur Cloudinary — utilise l'API (pas le CDN) pour contourner les restrictions d'accès
-        try:
-            import cloudinary.utils
-            public_id = 'media/' + project.report_pdf.name
-            dl_url = cloudinary.utils.private_download_url(
-                public_id, '', resource_type='raw', type='upload',
-            )
-            resp = _requests.get(dl_url, timeout=30)
-            resp.raise_for_status()
-            content = resp.content
-        except Exception:
-            raise Http404
+        content = _fetch_cloudinary_pdf(project.report_pdf)
     else:
-        # Fichier local (développement sans Cloudinary)
         try:
             with project.report_pdf.open('rb') as f:
                 content = f.read()
-        except Exception:
-            raise Http404
+        except Exception as e:
+            logger.exception('Lecture PDF local échouée: %s', e)
+            raise Http404('Fichier PDF introuvable')
 
     return HttpResponse(
         content,
